@@ -1,3 +1,4 @@
+/* Setting the background color of the page. */
 * {
     margin: 0;
     padding: 0;
@@ -10,17 +11,18 @@ html {
     background: radial-gradient(ellipse at bottom right, #b34b65 0%, #000000 100%);
 }
 
+/* The CSS for the text. */
 #title {
     position: absolute;
     top: 35%;
     left: 0;
     right: 0;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-align: right;
     font-family: Lato;
     font-weight: 300;
     font-size: 30px;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     margin-top: -60px;
     padding-left: 10px;
     padding-right: 70px;
@@ -37,12 +39,12 @@ html {
     top: 55%;
     left: 0;
     right: 0;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-align: right;
     font-family: Lato;
     font-weight: 300;
     font-size: 15px;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     margin-top: -10px;
     padding-left: 10px;
     padding-right: 70px;
@@ -55,6 +57,135 @@ html {
 }
 
 
+/* The CSS for the icons. */
+#icons {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    color: rgb(0, 0, 0);
+    text-align: right;
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin-top: 300px;
+}
+
+ul {
+    position: relative;
+    display: flex;
+    z-index: 2;
+    padding-right: 100px;
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    margin: 20px;
+}
+
+ul li a {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color : rgb(255, 255, 255); 
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 5px 45px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: 0.5s;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+ul li a:hover {
+    transform: translateY(-10px);
+}
+
+ul li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: skewX(45deg) translateX(150px);
+    transition: 0.5s;
+}
+
+ul li a:hover::before {
+    transform: skewX(45deg) translateX(-150px);
+}
+
+
+
+/* The CSS for the box that contains the text. */
+.box {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    right: 0px;
+    bottom: 150px;
+    padding: 50px;
+    z-index: 10;
+    border-radius: 50px;
+}
+
+.box:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.box:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -2;
+    filter: blur(40px)
+}
+
+.box .glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+.box .content {
+    padding: 20px;
+    color: #fff;
+}
+
+
+
+
+/* The CSS for the Toguy's Name. */
 section {
     position: relative;
     width: 100%;
@@ -83,7 +214,6 @@ img {
     -webkit-user-select: none;
     opacity: 0.5;
     z-index: -10;
-
 }
 
 img:hover {
@@ -95,7 +225,6 @@ img:hover {
 
 
 section .stars div {
-
     animation: animate1 20s linear infinite;
     animation-delay: -10s;
 }
@@ -109,7 +238,6 @@ section .stars div:nth-child(2) {
     0% {
         transform: translate(10.5%, 0);
     }
-
     100% {
         transform: translate(-10.5%, 0);
     }
@@ -138,7 +266,6 @@ section .stars:nth-child(even) div:nth-child(2) {
     0% {
         transform: translateX(-10.5%);
     }
-
     100% {
         transform: translateX(10.5%);
     }
@@ -148,66 +275,7 @@ section .stars:nth-child(even) div:nth-child(2) {
     0% {
         transform: translateX(-10.5%);
     }
-
     100% {
         transform: translateX(0);
     }
-}
-
-.box {
-    position: absolute;
-    width: 700px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #000000;
-    margin: 40px;
-    right: 0px;
-    bottom: 150px;
-    padding: 50px;
-    z-index: 10;
-
-}
-
-.box:before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: #ffffff;
-    z-index: -1;
-}
-
-.box:after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: rgb(198, 92, 92);
-    z-index: -2;
-    filter: blur(40px)
-}
-
-.box:nth-child(1):before,
-.box:nth-child(1):after {}
-
-.box .glass {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    display: block;
-    background: rgb(255, 255, 255)
-    pointer-events: none;
-}
-
-.box .content {
-    padding: 20px;
-    color: #fff;
 }
